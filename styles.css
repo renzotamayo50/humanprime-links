@@ -1,0 +1,458 @@
+
+/* ============================================
+   HUMANPRIME PERÚ
+   LINKYEE GLASSMORPHISM
+   Identidad visual oficial
+   ============================================ */
+
+/* 1. COLORES DE MARCA */
+
+:root {
+  --bg-1: #faf8f3;
+  --bg-2: #eaf7f4;
+
+  --shape-1: #24b7a6;
+  --shape-2: #b9e8e2;
+  --shape-3: #122d4b;
+
+  --fg: #122d4b;
+  --muted: #587181;
+
+  --glass-bg: rgba(255, 255, 255, 0.76);
+  --glass-border: rgba(255, 255, 255, 0.88);
+  --glass-shadow:
+    0 12px 38px rgba(18, 45, 75, 0.10);
+
+  --hover-bg: rgba(225, 247, 243, 0.96);
+
+  --sans: 'Inter', -apple-system,
+    BlinkMacSystemFont, 'Helvetica Neue',
+    Arial, sans-serif;
+
+  --language-switcher-bg: var(--glass-bg);
+  --language-switcher-fg: var(--fg);
+  --language-switcher-border: var(--glass-border);
+  --language-switcher-hover: var(--hover-bg);
+  --language-switcher-active-bg: var(--fg);
+  --language-switcher-active-fg: #ffffff;
+  --language-switcher-focus: var(--fg);
+  --language-switcher-shadow: var(--glass-shadow);
+}
+
+/* Mantener identidad clara con cualquier esquema */
+
+:root.scheme-dark {
+  --bg-1: #faf8f3;
+  --bg-2: #eaf7f4;
+  --fg: #122d4b;
+  --muted: #587181;
+  --glass-bg: rgba(255, 255, 255, 0.76);
+  --glass-border: rgba(255, 255, 255, 0.88);
+  --hover-bg: rgba(225, 247, 243, 0.96);
+}
+
+/* 2. ESTILOS GENERALES */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background-color: #faf8f3;
+
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(250, 248, 243, 0.08),
+      rgba(250, 248, 243, 0.12)
+    ),
+    url("./images/humanprime-background.png");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 48px 20px;
+
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 3. ELIMINAR FORMAS ORIGINALES */
+
+.bg-shape {
+  display: none;
+}
+
+/* 4. CONTENEDOR PRINCIPAL */
+
+.container {
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 5. TARJETAS GLASSMORPHISM */
+
+.card {
+  background: var(--glass-bg);
+
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+
+  box-shadow: var(--glass-shadow);
+}
+
+/* 6. PERFIL */
+
+.profile-card {
+  padding: 34px 26px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 108px;
+  height: 108px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  margin: 0 auto 18px;
+  display: block;
+
+  border: 3px solid rgba(36, 183, 166, 0.55);
+
+  box-shadow:
+    0 6px 24px rgba(18, 45, 75, 0.12);
+}
+
+.name {
+  font-size: 25px;
+  font-weight: 700;
+
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+
+  color: #122d4b;
+}
+
+.description {
+  font-size: 15px;
+  color: var(--muted);
+
+  text-wrap: pretty;
+  max-width: 34ch;
+  margin: 0 auto;
+
+  line-height: 1.65;
+}
+
+/* 7. LISTA DE ENLACES */
+
+.links {
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+/* 8. BOTONES PRINCIPALES */
+
+.link-button {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 16px 18px;
+  min-height: 62px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #122d4b;
+
+  border-radius: 16px;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.link-button:hover,
+.link-button:focus-visible {
+  background: rgba(229, 249, 245, 0.96);
+
+  transform: translateY(-2px);
+
+  border-color: rgba(36, 183, 166, 0.55);
+
+  box-shadow:
+    0 12px 32px rgba(18, 45, 75, 0.14);
+
+  outline: none;
+}
+
+.link-button:active {
+  transform: translateY(0);
+}
+
+/* 9. ÍCONOS DE LOS BOTONES */
+
+.link-icon {
+  width: 36px;
+  height: 36px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(36, 183, 166, 0.12);
+
+  color: #168f86;
+
+  flex-shrink: 0;
+}
+
+.link-icon i {
+  font-size: 16px;
+}
+
+.link-text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.link-button-text {
+  font-size: 13px;
+  color: var(--muted);
+  margin-left: 6px;
+}
+
+/* 10. BOTONES DE REDES SOCIALES */
+
+.button-container {
+  padding: 16px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.icon-button {
+  width: 44px;
+  height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #122d4b;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.icon-button i {
+  font-size: 19px;
+}
+
+.icon-button:hover,
+.icon-button:focus-visible {
+  background: rgba(36, 183, 166, 0.15);
+
+  transform: translateY(-2px);
+
+  outline: none;
+}
+
+/* 11. PIE DE PÁGINA */
+
+.footer {
+  margin-top: 28px;
+  padding: 0 12px 24px;
+
+  font-size: 13px;
+
+  color: var(--muted);
+
+  line-height: 1.7;
+  text-align: center;
+}
+
+.footer a {
+  color: #122d4b;
+  border-bottom: 1px solid #24b7a6;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+/* 12. BOTÓN LATEST */
+
+.link-button.link-latest {
+  align-items: flex-start;
+
+  border-color: rgba(36, 183, 166, 0.4);
+
+  box-shadow:
+    0 8px 28px rgba(36, 183, 166, 0.10);
+}
+
+.link-latest-badge {
+  display: inline-block;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  padding: 3px 9px;
+  margin-right: 8px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(135deg, #122d4b, #24b7a6);
+
+  color: #ffffff;
+  vertical-align: 1px;
+}
+
+.link-latest .link-text {
+  flex: 1 1 auto;
+  min-width: 0;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+
+  overflow: hidden;
+  overflow-wrap: anywhere;
+
+  line-height: 1.35;
+}
+
+/* 13. ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 600px) {
+  body {
+    padding: 32px 16px;
+
+    background-attachment: scroll;
+    background-position: center top;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .profile-card {
+    padding: 28px 20px;
+    margin-bottom: 16px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .name {
+    font-size: 23px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .links {
+    gap: 11px;
+  }
+
+  .link-button {
+    padding: 15px 16px;
+    min-height: 60px;
+  }
+}
+
+/* 14. PANTALLAS PEQUEÑAS */
+
+@media (max-width: 360px) {
+  body {
+    padding: 24px 12px;
+  }
+
+  .profile-card {
+    padding: 24px 16px;
+  }
+
+  .link-button {
+    font-size: 14px;
+  }
+}
+
+/* 15. ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* 16. RESPALDO GLASSMORPHISM */
+
+@supports not (backdrop-filter: blur(20px)) {
+  .card {
+    background: rgba(255, 255, 255, 0.92);
+  }
+}
